@@ -23,6 +23,18 @@
 # also 1
 # Zen 1
 
+####################
+#### Pseudocode ####
+####################
+
+# My strategy for solving this problem, assuming the string was in a file, was to use the following steps:
+# 1) Parse the input file from the command-line using the argparse module
+# 2) Since we're just reading a single string, only read the first line of the file with readline()
+# 3) Additionally, strip off the remaining new line character and split on white spaces to push each string in the line to a list
+# 4) Initialize a dicitionary
+# 5) Loop over each element in the list of strings, push the string as the key in the dictionary and the number of occurrences of that string as the associated value
+# 6) Finally, for all items in the dictionary, print the key and value, separated by a space
+
 ##############
 #### Code ####
 ##############
