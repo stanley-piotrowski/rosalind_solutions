@@ -35,14 +35,19 @@ parser.add_argument("output", type = str, help = "Output file to write (e.g., ou
 # Execute the parser
 args = parser.parse_args()
 
-# Create file handle, read lines, and push lines to a list
+# Open file handle, create empty list, and append the line stripped of the \n 
 input_handle = open(args.input, "r")
-input_list = input_handle.readlines()
+input_list = []
+for line in input_handle:
+	input_list.append(line.strip("\n"))
 
-# Loop over list and if the index is even, subtract one and pull out the line with that index
+# Loop over list and if the index is not zero and is even, subset the element with that index - 1
+# This mimics the list having a 1-based indexing system
 output_handle = open(args.output, "w")
 for i in range(0, len(input_list) + 1):
-	print(i)
+	if (i != 0) & (i % 2 == 0):
+		output_handle.write(input_list[i - 1] + "\n")
+
 
 
 
