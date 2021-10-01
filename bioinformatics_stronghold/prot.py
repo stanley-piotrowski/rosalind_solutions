@@ -59,7 +59,7 @@ for line in codon_handle:
 	codon_dict[line[0]] = line[1]
 
 # Slice up the mRNA sequence into codons using C-style loop
-# If the codon is in the keys of the codon dictionary, append the value to the amino acid sequence list
+# If the codon is in the keys of the codon dictionary and is NOT a UGA (stop) codon, append the value to the amino acid sequence list
 aa_seq = []
 for i in range(0, len(input), 3):
 	codon = input[i:i+3]
