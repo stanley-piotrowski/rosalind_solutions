@@ -84,8 +84,8 @@ for (a, b, c, d, e, f, g) in zip_seq:
 	base_count = {}
 	base_count["A"] = a.count("A") + b.count("A") + c.count("A") + d.count("A") + e.count("A") + f.count("A") + g.count("A")
 	base_count["C"] = a.count("C") + b.count("C") + c.count("C") + d.count("C") + e.count("C") + f.count("C") + g.count("C") 
-	base_count["G"] = a.count("G") + b.count("G") + c.count("G") + c.count("G") + e.count("G") + f.count("G") + g.count("G") 
-	base_count["T"] = a.count("T") + b.count("T") + c.count("T") + c.count("T") + e.count("T") + f.count("T") + g.count("T")
+	base_count["G"] = a.count("G") + b.count("G") + c.count("G") + d.count("G") + e.count("G") + f.count("G") + g.count("G") 
+	base_count["T"] = a.count("T") + b.count("T") + c.count("T") + d.count("T") + e.count("T") + f.count("T") + g.count("T")
 	base_count_list.append(base_count)
 
 # Call consensus sequence 
