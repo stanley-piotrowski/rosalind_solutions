@@ -81,7 +81,6 @@ zip_seq = zip(*seq_dict.values())
 # Then store all dictionaries in a single list
 base_count_list = []
 for (a, b, c, d, e, f, g) in zip_seq:
-	print(a, b, c, d, e, f, g)
 	base_count = {}
 	base_count["A"] = a.count("A") + b.count("A") + c.count("A") + d.count("A") + e.count("A") + f.count("A") + g.count("A")
 	base_count["C"] = a.count("C") + b.count("C") + c.count("C") + d.count("C") + e.count("C") + f.count("C") + g.count("C") 
@@ -96,10 +95,36 @@ for (a, b, c, d, e, f, g) in zip_seq:
 consensus = []
 for i in base_count_list:
 	consensus.append(sorted(i.items(), key = lambda item: item[1])[-1][0])
+
+# Print profile matrix
+# Initialize empty lists for counts of each base
+count_A = []
+count_C = []
+count_G = []
+count_T = []
+
+# Loop over the list of dictionaries and iterate over each key:value pair in each dictionary
+# If the base is A, append the count to the A list, etc.
+for i in base_count_list:
+	for base, count in i.items():
+		if base == "A":
+			count_A.append(count)
+		elif base == "C":
+			count_C.append(count)
+		elif base == "G":
+			count_G.append(count)
+		elif base == "T": 
+			count_T.append(count)
+
+# Print consensus 
 print("".join(consensus))
-	
-	
-	
+
+# Print profile matrix
+# Note- map the str() method to each element 
+print("A:", " ".join(map(str, count_A)), sep = " ")
+print("C:", " ".join(map(str, count_C)), sep = " ")
+print("G:", " ".join(map(str, count_G)), sep = " ")
+print("T:", " ".join(map(str, count_T)), sep = " ")
 
 
 
