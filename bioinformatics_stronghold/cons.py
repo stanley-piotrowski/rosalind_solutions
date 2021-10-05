@@ -72,7 +72,7 @@ for line in input_handle:
 		header = line.strip("\n")
 		seq_dict[header] = ""
 	else:
-		seq_dict[header] = line.strip("\n")
+		seq_dict[header] = line.strip("\n") + line.strip("\n")
 
 # Loop over values of sequence dictionary and zip 
 zip_seq = zip(*seq_dict.values())
@@ -80,12 +80,12 @@ zip_seq = zip(*seq_dict.values())
 # Loop through zipped iterator, count the number of each base, push to dictionary for each position
 # Then store all dictionaries in a single list
 base_count_list = []
-for (a, b, c, d, e, f, g) in zip_seq:
+for (a, b, c, d, e, f, g, h, i, j) in zip_seq:
 	base_count = {}
-	base_count["A"] = a.count("A") + b.count("A") + c.count("A") + d.count("A") + e.count("A") + f.count("A") + g.count("A")
-	base_count["C"] = a.count("C") + b.count("C") + c.count("C") + d.count("C") + e.count("C") + f.count("C") + g.count("C") 
-	base_count["G"] = a.count("G") + b.count("G") + c.count("G") + d.count("G") + e.count("G") + f.count("G") + g.count("G") 
-	base_count["T"] = a.count("T") + b.count("T") + c.count("T") + d.count("T") + e.count("T") + f.count("T") + g.count("T")
+	base_count["A"] = a.count("A") + b.count("A") + c.count("A") + d.count("A") + e.count("A") + f.count("A") + g.count("A") + h.count("A") + i.count("A") + j.count("A")
+	base_count["C"] = a.count("C") + b.count("C") + c.count("C") + d.count("C") + e.count("C") + f.count("C") + g.count("C") + h.count("C") + i.count("C") + j.count("C")
+	base_count["G"] = a.count("G") + b.count("G") + c.count("G") + d.count("G") + e.count("G") + f.count("G") + g.count("G") + h.count("G") + i.count("G") + j.count("G")
+	base_count["T"] = a.count("T") + b.count("T") + c.count("T") + d.count("T") + e.count("T") + f.count("T") + g.count("T") + h.count("T") + i.count("T") + j.count("G")
 	base_count_list.append(base_count)
 
 # Call consensus sequence 
